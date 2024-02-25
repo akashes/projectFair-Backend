@@ -1,0 +1,44 @@
+npm init -y for package.json file
+update start command in json file
+npm i express cors dotenv
+create .evn file 
+create .gitignore file and add node_modules and .env
+create index.js file
+import express cors and dotenv
+dotevn eg : require('dotenv').config() //to load .env file contents into process.env
+set port as PORT = 4000 || process.env.PORT
+app.use(cors())
+app.use(express.json())
+mvc setup
+jwt token - npm i jsonwebtoken
+const jwt = require('jsonwebtoken')
+token creation --- const token = jwt.sign({userId:user._id},"superkey2024")
+token verification --- need a middleware
+
+middleware
+-----------
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle. The next middleware function is commonly denoted by a variable named next.
+
+Middleware functions can perform the following tasks:
+
+Execute any code.
+Make changes to the request and the response objects.
+End the request-response cycle.
+Call the next middleware function in the stack.
+If the current middleware function does not end the request-response cycle, it must call next() to pass control to the next middleware function. Otherwise, the request will be left hanging.
+
+An Express application can use the following types of middleware:
+
+               Application-level middleware
+               Router-level middleware
+               Error-handling middleware
+               Built-in middleware
+               Third-party middleware
+
+
+
+
+multer  : 
+  Multer is a node.js middleware for handling multipart/form-data, which is primarily used for uploading files. It is written on top of busboy for maximum efficiency.
+
+NOTE: Multer will not process any form which is not multipart (multipart/form-data).
