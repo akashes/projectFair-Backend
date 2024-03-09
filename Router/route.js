@@ -29,7 +29,11 @@ router.get('/project/all-projects',jwtMiddleware,projectController.getAllProject
 //get home projects
 router.get('/project/home-projects',projectController.getHomeProjects)
 
+//update project
+router.put('/project/update-project/:id',jwtMiddleware,multerConfig.single('projectImage'),projectController.editProject)
 
+// router.delete('/project/delete-project/:pid',jwtMiddleware,projectController.deleteProject)  //teacher taught way by passing id
+router.delete('/project/delete-project',jwtMiddleware,projectController.deleteProject) //my way by passing github link in reqBody
 
 
 module.exports=router

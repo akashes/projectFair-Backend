@@ -49,3 +49,13 @@ exports.login=async(req,res)=>{
     }
 }
 
+exports.updateUserDetails=async(req,res)=>{
+    const {github,linkedin}=req.body
+    const {username}=req.params
+    const filter ={username}
+    const existingUser = User.findOne({username})
+    if(existingUser){
+
+    }
+    
+}

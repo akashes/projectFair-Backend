@@ -1,4 +1,5 @@
 const multer = require('multer')
+console.log('inside multer');
 
 //to store multer data
 const storage = multer.diskStorage({
@@ -28,4 +29,5 @@ const multerConfig=multer(
         storage,fileFilter
     }
 )
+console.log('out of multer');
 module.exports = multerConfig
