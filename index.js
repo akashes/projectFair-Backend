@@ -33,3 +33,5 @@ pfServer.use('/uploads',express.static('./uploads')) // i think : means baseurl/
 pfServer.get('/',(req,res)=>{
     res.send(`<h1>Project Fair server started </h1>`)
 })
+
+ 

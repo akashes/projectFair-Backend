@@ -3,8 +3,8 @@ const Projects = require('../Models/projectSchema');
 //add project logic
 
 exports.addUserProject=async(req,res)=>{
+    console.log(req.body);
 
-    // res.status(200).json('inside add Project api')
 
     // get user id
     const userId=req.payload
@@ -15,7 +15,6 @@ exports.addUserProject=async(req,res)=>{
 
     // project image
     projectImage = req.file.filename
-    console.log(projectImage);
 
   
     try{
@@ -41,7 +40,8 @@ exports.addUserProject=async(req,res)=>{
 
 
 exports.getUserProject=async(req,res)=>{
-    //get user id
+   
+    console.log('reqpayloadd is ',req.payload);
     const userId = req.payload
 
     //api fetching
@@ -100,7 +100,7 @@ exports.editProject=async(req,res)=>{
 
     console.log("haha projectId is ",projectId);
 
-  
+   
 
     try{
 
@@ -118,20 +118,8 @@ exports.editProject=async(req,res)=>{
     }
 }
 
-//CLASS 
-// exports.deleteProject=async(req,res)=>{
-//     console.log('inside deleteproject');
-//     const {pid} = req.params
-//     try{
-//         const deleteData = await Projects.findByIdAndDelete({_id:pid})
-//         res.status(200).json({"message":"project deleted successfully","data":deleteData})
-//     }catch(err){
-//         res.status(401).json(err)
-//     }
-   
-// }
+
 exports.deleteProject=async(req,res)=>{
-    console.log('inside delete project');
 
     const {github}=req.body
     console.log('github is ',github);
