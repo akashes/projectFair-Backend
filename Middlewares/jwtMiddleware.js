@@ -5,7 +5,7 @@ const jwtMiddleware=(req,res,next)=>{
     console.log('inside jwt middleware');
     //token verification
     //get token from reqheader
-    const token = req.headers['authorization']?.slice(7)
+    const token = req.headers['authorization']?.slice(7)  // ['authorization'].split(" ")[1]
     console.log(token);
     //verifying token
     try{
